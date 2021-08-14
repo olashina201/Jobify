@@ -2,7 +2,9 @@ import React from "react";
 import me from "../assets/images/me.png";
 import "../assets/styles.css";
 
-const NavBar = () => {
+const NavBar = ({darkmode, setDarkmode}) => {
+  const toggle = () => {setDarkmode(!darkmode)}
+  
   return (
     <div className="header">
       <div className="logo">
@@ -36,18 +38,20 @@ const NavBar = () => {
         <a href="#">Find Salaries</a>
       </div>
       <div className="user-settings">
-        <div className="dark-light">
-          <svg
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-            stroke-width="1.5"
-            fill="none"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-          >
-            <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z" />
-          </svg>
-        </div>
+        <a onClick={toggle}>
+          <div className="dark-light">
+            <svg
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              stroke-width="1.5"
+              fill="none"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z" />
+            </svg>
+          </div>
+        </a>
         <div className="user-menu">
           <svg
             xmlns="http://www.w3.org/2000/svg"

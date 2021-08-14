@@ -92,6 +92,10 @@ body {
 }
 
 .job {
+	background-color: var(--body-bg-color);
+	font-family: var(--body-font);
+	font-size: 15px;
+	color: var(--body-color);
 	display: flex;
 	flex-direction: column;
 	max-width: 1400px;
