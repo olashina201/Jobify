@@ -1,22 +1,9 @@
-import React, { useEffect, useState } from "react";
-import axios from "axios";
+import React from "react";
 import Filter from "./Filter";
 import "../assets/styles.css";
 
-const JobCard = () => {
-  const [jobs, setJobs] = useState([]);
+const JobCard = ({jobs}) => {
 
-  useEffect(() => {
-    axios
-      .get("https://remotive.io/api/remote-jobs?limit=5")
-      .then((res) => {
-        console.log(res.data.jobs);
-        setJobs(res.data.jobs);
-      })
-      .catch((error) => {
-        console.log(error);
-      });
-  }, []);
   return (
     <div className="searched-jobs">
       <Filter />

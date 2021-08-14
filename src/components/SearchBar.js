@@ -1,11 +1,15 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import axios from"axios";
 import "../assets/styles.css";
 
-const SearchBar = () => {
+const SearchBar = ({ searchJob, handleSubmit, handleChange }) => {
+
+  
   return (
+  <form onSubmit={handleSubmit}>
     <div className="search-menu">
       <div className="search-bar">
-        <input type="text" className="search-box" autofocus />
+        <input type="text" className="search-box" value={searchJob} onChange={handleChange} />
       </div>
       <div className="search-location">
         <svg
@@ -68,6 +72,7 @@ const SearchBar = () => {
       </div>
       <button className="search-button">Find Job</button>
     </div>
+  </form>
   );
 };
 
