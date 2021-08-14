@@ -4,13 +4,14 @@ import Filter from "./Filter";
 import "../assets/styles.css";
 
 const JobCard = () => {
-  //const [jobs, setJobs] = useState([]);
+  const [jobs, setJobs] = useState([]);
 
   useEffect(() => {
     axios
       .get("https://remotive.io/api/remote-jobs?limit=5")
       .then((res) => {
-        console.log(res.data);
+        console.log(res.data.jobs);
+        setJobs(res.data.jobs);
       })
       .catch((error) => {
         console.log(error);
@@ -20,8 +21,9 @@ const JobCard = () => {
     <div className="searched-jobs">
       <Filter />
       <div className="job-cards">
-        {jobs.map((job) => (
-          <div className="job-card">
+        {jobs.map((job) => {
+            return (
+                <div className="job-card">
             <div className="job-card-header">
               <svg
                 viewBox="0 -13 512 512"
@@ -39,14 +41,13 @@ const JobCard = () => {
               </svg>
               <div className="menu-dot"></div>
             </div>
-            <div className="job-card-title">uiux</div>
+            <div className="job-card-title">{job.title}</div>
             <div className="job-card-subtitle">
-              The User Experience Designer position exists to create compelling
-              and digital user experience through excellent design...
+              {job.description.slice(1, 100)}
             </div>
             <div className="job-detail-buttons">
               <button className="search-buttons detail-button">
-                Full Time
+                {job.job_type}
               </button>
               <button className="search-buttons detail-button">
                 Min. 1 Year
@@ -62,7 +63,9 @@ const JobCard = () => {
               </button>
             </div>
           </div>
-        ))}
+            )
+        }
+        )}
 
         {/* <div className="job-card">
             <div className="job-card-header">
