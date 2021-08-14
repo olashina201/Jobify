@@ -3,6 +3,7 @@ import Filter from "./Filter";
 import "../assets/styles.css";
 import { Link } from "react-router-dom";
 import { stripHtml } from "string-strip-html";
+import { strict as assert } from "assert";
 
 const JobCard = ({ jobs, search, searchJob }) => {
   return (
