@@ -1,16 +1,16 @@
-import Filter from "./components/Filter";
-import JobCard from "./components/JobCard";
-import SideBar from "./components/SideBar";
-import SearchBar from "./components/SearchBar";
+import Index from "./components/Index";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import SingleJob from "./components/SingleJob";
-import OverViewSideBar from "./components/OverViewSideBar";
-import NavBar from "./components/NavBar";
 
 function App() {
   return (
     <>
-    <NavBar />
-    <SearchBar />
+    <Router>
+      <Switch>
+        <Route exact path="/" component={Index} />
+        <Route exact path="/single" component={SingleJob} />
+      </Switch>
+    </Router>
     </>
   );
 }

@@ -3,75 +3,45 @@ import "../assets/styles.css";
 
 const SearchBar = () => {
   return (
-    <div class="search-menu">
-      <div class="search-bar">
-        <input type="text" class="search-box" autofocus />
-        <div class="search item">
-          Product Designer
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            viewbox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="3"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            class="feather feather-x"
-          >
-            <path d="M18 6L6 18M6 6l12 12" />
-          </svg>
-        </div>
-        <div class="search item">
-          UI Designer
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            viewbox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="3"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            class="feather feather-x"
-          >
-            <path d="M18 6L6 18M6 6l12 12" />
-          </svg>
-        </div>
+    <div className="search-menu">
+      <div className="search-bar">
+        <input type="text" className="search-box" autofocus />
       </div>
-      <div class="search-location">
+      <div className="search-location">
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          viewbox="0 0 24 24"
+          viewBox="0 0 24 24"
           fill="none"
           stroke="currentColor"
           stroke-width="2"
           stroke-linecap="round"
           stroke-linejoin="round"
-          class="feather feather-map-pin"
+          className="feather feather-map-pin"
         >
           <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z" />
           <circle cx="12" cy="10" r="3" />
         </svg>
         Londontowne, MD
       </div>
-      <div class="search-job">
+      <div className="search-job">
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          viewbox="0 0 24 24"
+          viewBox="0 0 24 24"
           fill="none"
           stroke="currentColor"
           stroke-width="2"
           stroke-linecap="round"
           stroke-linejoin="round"
-          class="feather feather-briefcase"
+          className="feather feather-briefcase"
         >
           <rect x="2" y="7" width="20" height="14" rx="2" ry="2" />
           <path d="M16 21V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v16" />
         </svg>
         <input type="text" placeholder="Job Type" />
       </div>
-      <div class="search-salary">
+      <div className="search-salary">
         <svg
-          viewbox="0 0 24 24"
+          viewBox="0 0 24 24"
           xmlns="http://www.w3.org/2000/svg"
           stroke="currentColor"
           fill="currentColor"
@@ -96,7 +66,7 @@ const SearchBar = () => {
         </svg>
         <input type="text" placeholder="Salary Range" />
       </div>
-      <button class="search-button">Find Job</button>
+      <button className="search-button">Find Job</button>
     </div>
   );
 };

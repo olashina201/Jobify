@@ -3,11 +3,11 @@ import "../assets/styles.css";
 
 const Filter = () => {
   return (
-    <div class="searched-bar">
-      <div class="searched-show">Showing 46 Jobs</div>
-      <div class="searched-sort">
-        Sort by: <span class="post-time">Newest Post </span>
-        <span class="menu-icon">▼</span>
+    <div className="searched-bar">
+      <div className="searched-show">Showing 46 Jobs</div>
+      <div className="searched-sort">
+        Sort by: <span className="post-time">Newest Post </span>
+        <span className="menu-icon">▼</span>
       </div>
     </div>
   );

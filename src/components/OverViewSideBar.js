@@ -8,9 +8,9 @@ const OverViewSideBar = () => {
         <div class="job-card overview-card">
           <div class="overview-wrapper">
             <svg
-              viewbox="0 -13 512 512"
+              viewBox="0 -13 512 512"
               xmlns="http://www.w3.org/2000/svg"
-              style="background-color:#2e2882"
+              style={{ backgroundColor: "#2e2882" }}
             >
               <g fill="#feb0a5">
                 <path d="M256 92.5l127.7 91.6L512 92 383.7 0 256 91.5 128.3 0 0 92l128.3 92zm0 0M256 275.9l-127.7-91.5L0 276.4l128.3 92L256 277l127.7 91.5 128.3-92-128.3-92zm0 0" />
@@ -30,7 +30,7 @@ const OverViewSideBar = () => {
             <svg
               class="heart"
               xmlns="http://www.w3.org/2000/svg"
-              viewbox="0 0 24 24"
+              viewBox="0 0 24 24"
               fill="none"
               stroke="currentColor"
               stroke-width="2"
