@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import SingleJob from "./components/SingleJob";
 
 function App() {
+
   return (
     <>
     <Router>

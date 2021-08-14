@@ -2,8 +2,11 @@ import React, { useState, useEffect } from "react";
 import axios from"axios";
 import "../assets/styles.css";
 
-const SearchBar = ({ searchJob, handleSubmit, handleChange }) => {
+const SearchBar = ({ searchJob, handleSubmit, setSearchJob }) => {
 
+  const handleChange = (e) => {
+    setSearchJob(e.target.value)
+  }
   
   return (
   <form onSubmit={handleSubmit}>
@@ -25,7 +28,7 @@ const SearchBar = ({ searchJob, handleSubmit, handleChange }) => {
           <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z" />
           <circle cx="12" cy="10" r="3" />
         </svg>
-        Londontowne, MD
+        Lagos, Nigeria
       </div>
       <div className="search-job">
         <svg

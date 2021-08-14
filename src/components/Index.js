@@ -7,17 +7,11 @@ import JobCard from "./JobCard";
 import "../assets/styles.css";
 
 const Index = () => {
-  const [searchJob, setSearchJob] = useState([])
+  const [searchJob, setSearchJob] = useState("")
   const [jobs, setJobs] = useState([]);
+  const [search, setSearch] = useState([])
 
-  const handleSubmit = (e) => {
-    e.preventDefault()
-    console.log(searchJob)
-  }
-  const handleChange = (e) => {
-    setSearchJob(e.target.value)
-  }
-
+  
   useEffect(() => {
     axios
       .get("https://remotive.io/api/remote-jobs?limit=5")
@@ -30,26 +24,32 @@ const Index = () => {
       });
   }, []);
 
-  useEffect(() => {
-    axios
-      .get(`https://remotive.io/api/remote-jobs?search=${searchJob}`)
+
+    const getSearch = async (search) => {
+      await axios.get(`https://remotive.io/api/remote-jobs?search=${search}`)
       .then((res) => {
-        console.log(res.data.jobs);
-        setSearchJob(res.data.jobs);
+        setSearch(res.data.jobs);
       })
       .catch((error) => {
         console.log(error);
       });
-  }, []);
+    }
+
+    const handleSubmit = (e) => {
+      e.preventDefault()
+      getSearch(searchJob)
+      console.log(search);
+    }
   
+
   return (
     <div className="job">
       <NavBar />
       <div className="wrapper">
-        <SearchBar searchJob={searchJob} handleChange={handleChange} handleSubmit={handleSubmit} />
+        <SearchBar searchJob={searchJob} setSearchJob={setSearchJob} handleSubmit={handleSubmit} />
         <div className="main-container">
           <SideBar />
-          <JobCard jobs={jobs} />
+          <JobCard jobs={jobs} search={search} searchJob={searchJob} />
         </div>
       </div>
     </div>
