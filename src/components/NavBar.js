@@ -26,7 +26,7 @@ const NavBar = () => {
             data-original="#518ef8"
           />
         </svg>
-        Milao
+        MicroJob
       </div>
       <div className="header-menu">
         <a href="#" className="active">

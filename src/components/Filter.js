@@ -1,12 +1,13 @@
 import React from "react";
 import "../assets/styles.css";
 
-const Filter = () => {
+const Filter = ({jobs, search}) => {
+  const searchLength = search.length;
   return (
     <div className="searched-bar">
-      <div className="searched-show">Showing 46 Jobs</div>
+      <div className="searched-show">{searchLength >= 1 ? `Showing ${searchLength}` : `Showing ${jobs.length}` }</div>
       <div className="searched-sort">
-        Sort by: <span className="post-time">Newest Post </span>
+        Sort by: <span className="post-time">Newest Post</span>
         <span className="menu-icon">▼</span>
       </div>
     </div>
