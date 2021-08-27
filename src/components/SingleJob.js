@@ -5,7 +5,7 @@ import OverViewSideBar from "./OverViewSideBar";
 import SingleJobCard from "./SingleJobCard";
 import SearchBar from "./SearchBar";
 
-const SingleJob = () => {
+const SingleJob = ({ job }) => {
   return (
     <div className="job">
       <NavBar />
@@ -13,7 +13,7 @@ const SingleJob = () => {
         <SearchBar />
         <div className="main-container">
           <OverViewSideBar />
-          <SingleJobCard />
+          <SingleJobCard job={job.url} />
         </div>
       </div>
     </div>

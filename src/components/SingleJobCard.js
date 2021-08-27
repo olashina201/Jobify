@@ -1,9 +1,28 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import axios from "axios";
 
-const SingleJobCard = () => {
+const SingleJobCard = ({ job }) => {
+  const [jobId, setJobId] = useState([]);
+
+  useEffect(() => {
+    axios
+      .get(`${job.url}`)
+      .then((res) => {
+        console.log(res.data);
+        setJobId(res.data);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }, []);
+
   return (
     <div className="job-explain">
-      <img className="job-bg" src="https://i.picsum.photos/id/4/640/425.jpg?hmac=dNaBvQNplvUNwYowxbDHR-qRztlTtNyo-FuWiN13Oxo" alt="" />
+      <img
+        className="job-bg"
+        src="https://i.picsum.photos/id/4/640/425.jpg?hmac=dNaBvQNplvUNwYowxbDHR-qRztlTtNyo-FuWiN13Oxo"
+        alt=""
+      />
       <div className="job-logos">
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -25,8 +44,8 @@ const SingleJobCard = () => {
         </svg>
       </div>
       <div className="job-explain-content">
-        <div className="job-title-wrapper">
-          <div className="job-card-title">UI /UX Designer</div>
+        <div className="job-titleWrapper">
+          <div className="job-card-title">{jobId.title}</div>
           <div className="job-action">
             <svg
               className="heart"
@@ -34,10 +53,10 @@ const SingleJobCard = () => {
               viewBox="0 0 24 24"
               fill="none"
               stroke="currentColor"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              className="feather feather-heart"
+              strokeWidth="2"
+              strokLinecap="round"
+              strokLinejoin="round"
+              // className="feather feather-heart"
             >
               <path d="M20.8 4.6a5.5 5.5 0 00-7.7 0l-1.1 1-1-1a5.5 5.5 0 00-7.8 7.8l1 1 7.8 7.8 7.8-7.7 1-1.1a5.5 5.5 0 000-7.8z" />
             </svg>
@@ -46,9 +65,9 @@ const SingleJobCard = () => {
               viewBox="0 0 24 24"
               fill="none"
               stroke="currentColor"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
+              strokeWidth="2"
+              strokLinecap="round"
+              strokLinejoin="round"
               className="feather feather-share-2"
             >
               <circle cx="18" cy="5" r="3" />
@@ -58,7 +77,7 @@ const SingleJobCard = () => {
             </svg>
           </div>
         </div>
-        <div className="job-subtitle-wrapper">
+        <div className="job-subtitleWrapper">
           <div className="company-name">
             Patreon <span className="comp-location">Londontowne, MD.</span>
           </div>
@@ -87,7 +106,7 @@ const SingleJobCard = () => {
         <div className="overview-text">
           <div className="overview-text-header">Overview</div>
           <div className="overview-text-subheader">
-            We believe that design (and you) will be critical to the company's
+            We believe that design (and you) will be critical to the companys
             success. You will work with our founders and our early customers to
             help define and build our product functionality, while maintaining
             the quality bar that customers have come to expect from modern SaaS

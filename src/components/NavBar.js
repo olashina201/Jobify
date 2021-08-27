@@ -2,9 +2,11 @@ import React from "react";
 import me from "../assets/images/me.png";
 import "../assets/styles.css";
 
-const NavBar = ({darkmode, setDarkmode}) => {
-  const toggle = () => {setDarkmode(!darkmode)}
-  
+const NavBar = ({ darkmode, setDarkmode }) => {
+  const toggle = () => {
+    setDarkmode(!darkmode);
+  };
+
   return (
     <div className="header">
       <div className="logo">
@@ -43,10 +45,10 @@ const NavBar = ({darkmode, setDarkmode}) => {
             <svg
               viewBox="0 0 24 24"
               stroke="currentColor"
-              stroke-width="1.5"
+              strokewidth="1.5"
               fill="none"
-              stroke-linecap="round"
-              stroke-linejoin="round"
+              strokeLinecap="round"
+              strokeLinejoin="round"
             >
               <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z" />
             </svg>
@@ -58,19 +60,15 @@ const NavBar = ({darkmode, setDarkmode}) => {
             viewBox="0 0 24 24"
             fill="none"
             stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
+            strokewidth="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
             className="feather feather-square"
           >
             <rect x="3" y="3" width="18" height="18" rx="2" ry="2" />
           </svg>
         </div>
-        <img
-          className="user-profile"
-          src={me}
-          alt=""
-        />
+        <img className="user-profile" src={me} alt="" />
         <div className="user-name">Olashina Quadri</div>
       </div>
     </div>
